@@ -9,6 +9,7 @@
 
 namespace Endroid\SoccerCalendarBundle\DependencyInjection;
 
+use Endroid\SoccerCalendar\Factory\CalendarFactory;
 use Symfony\Component\Config\Definition\Processor;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -25,7 +26,7 @@ final class EndroidSoccerCalendarExtension extends Extension
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yaml');
 
-        $clientDefinition = $container->getDefinition(::class);
-        $clientDefinition->setArguments([$config['product_token'], $config['defaults'], $config['delivery_phone_numbers'], $config['disable_delivery']]);
+//        $clientDefinition = $container->getDefinition(CalendarFactory::class);
+//        $clientDefinition->setArguments([$config['product_token'], $config['defaults'], $config['delivery_phone_numbers'], $config['disable_delivery']]);
     }
 }
