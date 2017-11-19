@@ -1,5 +1,5 @@
-Soccer Calendar
-===============
+EndroidSoccerCalendarBundle
+===========================
 
 *By [endroid](http://endroid.nl/)*
 
