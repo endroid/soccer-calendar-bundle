@@ -9,7 +9,6 @@
 
 namespace Endroid\SoccerCalendarBundle\DependencyInjection;
 
-use Endroid\SoccerCalendar\Factory\CalendarFactory;
 use Endroid\SoccerCalendarBundle\Controller\TeamListController;
 use Symfony\Component\Config\Definition\Processor;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;

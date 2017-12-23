@@ -9,7 +9,6 @@
 
 namespace Endroid\SoccerCalendarBundle\Controller;
 
-use Endroid\SoccerData\Entity\Competition;
 use Endroid\SoccerData\Loader\CompetitionLoaderInterface;
 use Endroid\SoccerData\Loader\TeamLoaderInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -40,7 +39,7 @@ final class TeamListController
         }
 
         return new Response($this->templating->render('@EndroidSoccerCalendar/team/list.html.twig', [
-            'competitions' => $competitions
+            'competitions' => $competitions,
         ]));
     }
 }
