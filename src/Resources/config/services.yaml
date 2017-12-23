@@ -4,8 +4,19 @@ services:
         autoconfigure: true
         public: false
 
-    Endroid\CmSmsBundle\Controller\:
+    Endroid\SoccerCalendarBundle\Controller\:
         resource: '../../Controller'
         tags: ['controller.service_arguments']
 
-    Endroid\SoccerCalendar\Factory\CalendarFactory: ~
+    Endroid\SoccerCalendar\Factory\CalendarFactory:
+        public: true
+
+    Endroid\SoccerData\Vi\Client: ~
+    Endroid\SoccerData\Vi\Loader\CompetitionLoader: ~
+    Endroid\SoccerData\Vi\Loader\TeamLoader: ~
+    Endroid\SoccerData\Vi\Loader\MatchLoader: ~
+    Endroid\SoccerData\Loader\CompetitionLoaderInterface: '@Endroid\SoccerData\Vi\Loader\CompetitionLoader'
+    Endroid\SoccerData\Loader\TeamLoaderInterface: '@Endroid\SoccerData\Vi\Loader\TeamLoader'
+    Endroid\SoccerData\Loader\MatchLoaderInterface: '@Endroid\SoccerData\Vi\Loader\MatchLoader'
+
+    Endroid\Calendar\Writer\IcalWriter: ~

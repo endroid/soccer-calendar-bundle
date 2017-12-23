@@ -11,37 +11,36 @@ namespace Endroid\SoccerCalendarBundle\Controller;
 
 use Endroid\SoccerData\Entity\Competition;
 use Endroid\SoccerData\Loader\CompetitionLoaderInterface;
+use Endroid\SoccerData\Loader\TeamLoaderInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Twig\Environment;
 
 final class TeamListController
 {
-    public function __invoke(array $competitionNames, Environment $twig, CompetitionLoaderInterface $competitionLoader): Response
+    private $competitionNames;
+    private $templating;
+    private $competitionLoader;
+    private $teamLoader;
+
+    public function __construct(array $competitionNames, Environment $templating, CompetitionLoaderInterface $competitionLoader, TeamLoaderInterface $teamLoader)
+    {
+        $this->competitionNames = $competitionNames;
+        $this->templating = $templating;
+        $this->competitionLoader = $competitionLoader;
+        $this->teamLoader = $teamLoader;
+    }
+
+    public function __invoke(): Response
     {
         $competitions = [];
-
-        foreach ($competitionNames as $name) {
-            $competition = $competitionLoader->loadByName($name);
-
-
-            $teams = $this->getTeams($url);
-
-            $competition = [
-                'name' => $name,
-                'teams' => $teams,
-            ];
-
+        foreach ($this->competitionNames as $name) {
+            $competition = $this->competitionLoader->loadByName($name);
+            $this->teamLoader->loadByCompetition($competition);
             $competitions[] = $competition;
         }
 
-        return new Response($twig->render('@EndroidSoccerCalendar/team/list.html.twig', [
+        return new Response($this->templating->render('@EndroidSoccerCalendar/team/list.html.twig', [
             'competitions' => $competitions
         ]));
-    }
-
-    private function loadCompetition(string $url): Competition
-    {
-        $competition = new Competition($url);
-
     }
 }

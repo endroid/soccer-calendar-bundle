@@ -21,7 +21,8 @@ final class Configuration implements ConfigurationInterface
         $treeBuilder
             ->root('endroid_soccer_calendar')
                 ->children()
-                    ->arrayNode('competition_urls')
+                    ->arrayNode('competition_names')
+                        ->prototype('scalar')
         ;
 
         return $treeBuilder;
