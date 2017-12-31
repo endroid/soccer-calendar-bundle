@@ -1,7 +1,7 @@
 {
     "name": "endroid/soccer-calendar-bundle",
     "description": "Endroid Soccer Calendar Bundle for Symfony",
-    "keywords": ["endroid", "soccer", "calendar", "bundle", "symfony"],
+    "keywords": ["endroid", "soccer", "calendar", "bundle", "symfony", "php"],
     "homepage": "https://github.com/endroid/soccer-calendar-bundle",
     "type": "symfony-bundle",
     "license": "MIT",

@@ -1,10 +1,9 @@
-EndroidSoccerCalendarBundle
-===========================
+# Soccer Calendar Bundle
 
 *By [endroid](https://endroid.nl/)*
 
 [![Latest Stable Version](http://img.shields.io/packagist/v/endroid/soccer-calendar-bundle.svg)](https://packagist.org/packages/endroid/soccer-calendar-bundle)
-[![Build Status](http://img.shields.io/travis/endroid/EndroidSoccerCalendarBundle.svg)](http://travis-ci.org/endroid/EndroidSoccerCalendarBundle)
+[![Build Status](http://img.shields.io/travis/endroid/soccer-calendar-bundle.svg)](http://travis-ci.org/endroid/soccer-calendar-bundle)
 [![Total Downloads](http://img.shields.io/packagist/dt/endroid/soccer-calendar-bundle.svg)](https://packagist.org/packages/endroid/soccer-calendar-bundle)
 [![Monthly Downloads](http://img.shields.io/packagist/dm/endroid/soccer-calendar-bundle.svg)](https://packagist.org/packages/endroid/soccer-calendar-bundle)
 [![License](http://img.shields.io/packagist/l/endroid/soccer-calendar-bundle.svg)](https://packagist.org/packages/endroid/soccer-calendar-bundle)
