@@ -16,8 +16,8 @@
                 {% for team in competition.teams %}
 
                     <tr>
-                        <td><a href="{{ path('endroid_soccer_calendar_team', { competitionName: competition.name, teamName: team.name }) }}">{{ team.name }}</a></td>
-                        <td width="20"><a href="{{ path('endroid_soccer_calendar_team', { competitionName: competition.name, teamName: team.name }) }}"><span class="glyphicon glyphicon-calendar"></span></a></td>
+                        <td><a href="{{ path('soccer_calendar_team', { competitionName: competition.name, teamName: team.name }) }}">{{ team.name }}</a></td>
+                        <td width="20"><a href="{{ path('soccer_calendar_team', { competitionName: competition.name, teamName: team.name }) }}"><span class="glyphicon glyphicon-calendar"></span></a></td>
                     </tr>
 
                 {% endfor %}
