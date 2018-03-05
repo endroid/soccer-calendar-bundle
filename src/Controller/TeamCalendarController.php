@@ -15,6 +15,7 @@ use Endroid\SoccerData\Loader\CompetitionLoaderInterface;
 use Endroid\SoccerData\Loader\MatchLoaderInterface;
 use Endroid\SoccerData\Loader\TeamLoaderInterface;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 
 final class TeamCalendarController
 {
@@ -33,6 +34,9 @@ final class TeamCalendarController
         $this->calendarWriter = $calendarWriter;
     }
 
+    /**
+     * @Route("/{competitionName}/team/{teamName}.ics")
+     */
     public function __invoke(string $competitionName, string $teamName): Response
     {
         $competition = $this->competitionLoader->loadByName($competitionName);
