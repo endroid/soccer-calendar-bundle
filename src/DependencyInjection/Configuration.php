@@ -18,13 +18,18 @@ final class Configuration implements ConfigurationInterface
 {
     public function getConfigTreeBuilder(): TreeBuilder
     {
-        $treeBuilder = new TreeBuilder();
+        $treeBuilder = new TreeBuilder('endroid_soccer_calendar');
 
-        $treeBuilder
-            ->root('endroid_soccer_calendar')
-                ->children()
-                    ->arrayNode('competition_names')
-                        ->prototype('scalar')
+        if (method_exists($treeBuilder, 'root')) {
+            $rootNode = $treeBuilder->root('endroid_soccer_calendar');
+        } else {
+            $rootNode = $treeBuilder->getRootNode();
+        }
+
+        $rootNode
+            ->children()
+                ->arrayNode('competition_names')
+                    ->prototype('scalar')
         ;
 
         return $treeBuilder;
