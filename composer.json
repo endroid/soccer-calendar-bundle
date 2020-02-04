@@ -13,7 +13,10 @@
     ],
     "require": {
         "php": ">=7.2",
-        "endroid/soccer-calendar": "^2.0"
+        "endroid/soccer-calendar": "^2.0.1",
+        "symfony/dependency-injection": "^3.4||^4.0||^5.0",
+        "symfony/http-foundation": "^3.4||^4.0||^5.0",
+        "symfony/twig-bundle": "^3.4||^4.0||^5.0"
     },
     "require-dev": {
         "endroid/test": "dev-master"

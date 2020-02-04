@@ -33,7 +33,7 @@ final class TeamListController
     }
 
     /**
-     * @Route("/")
+     * @Route("/", name="soccer_calendar_list")
      */
     public function __invoke(): Response
     {

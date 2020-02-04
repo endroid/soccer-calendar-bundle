@@ -37,7 +37,7 @@ final class TeamCalendarController
     }
 
     /**
-     * @Route("/{competitionName}/team/{teamName}.ics")
+     * @Route("/{competitionName}/team/{teamName}.ics", name="soccer_calendar_team")
      */
     public function __invoke(string $competitionName, string $teamName): Response
     {
