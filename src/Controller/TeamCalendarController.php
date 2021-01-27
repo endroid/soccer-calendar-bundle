@@ -14,7 +14,7 @@ namespace Endroid\SoccerCalendarBundle\Controller;
 use Endroid\Calendar\Writer\IcalWriter;
 use Endroid\SoccerCalendar\Factory\CalendarFactory;
 use Endroid\SoccerData\Loader\CompetitionLoaderInterface;
-use Endroid\SoccerData\Loader\MatchLoaderInterface;
+use Endroid\SoccerData\Loader\GameLoaderInterface;
 use Endroid\SoccerData\Loader\TeamLoaderInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -23,15 +23,20 @@ final class TeamCalendarController
 {
     private $competitionLoader;
     private $teamLoader;
-    private $matchLoader;
+    private $gameLoader;
     private $calendarFactory;
     private $calendarWriter;
 
-    public function __construct(CompetitionLoaderInterface $competitionLoader, TeamLoaderInterface $teamLoader, MatchLoaderInterface $matchLoader, CalendarFactory $calendarFactory, IcalWriter $calendarWriter)
-    {
+    public function __construct(
+        CompetitionLoaderInterface $competitionLoader,
+        TeamLoaderInterface $teamLoader,
+        GameLoaderInterface $gameLoader,
+        CalendarFactory $calendarFactory,
+        IcalWriter $calendarWriter
+    ) {
         $this->competitionLoader = $competitionLoader;
         $this->teamLoader = $teamLoader;
-        $this->matchLoader = $matchLoader;
+        $this->gameLoader = $gameLoader;
         $this->calendarFactory = $calendarFactory;
         $this->calendarWriter = $calendarWriter;
     }
@@ -44,10 +49,10 @@ final class TeamCalendarController
         $competition = $this->competitionLoader->loadByName($competitionName);
         $this->teamLoader->loadByCompetition($competition);
         $team = $competition->getTeamByName($teamName);
-        $this->matchLoader->loadByTeam($team);
+        $this->gameLoader->loadByTeam($team);
 
         $calendar = $this->calendarFactory->createTeamCalendar($team);
 
-        return new Response($this->calendarWriter->writeToString($calendar));
+        return new Response($this->calendarWriter->writeToString($calendar, new \DateTimeImmutable(), new \DateTimeImmutable('+1 year')));
     }
 }

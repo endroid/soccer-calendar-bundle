@@ -20,6 +20,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
 final class EndroidSoccerCalendarExtension extends Extension
 {
+    /** @param array<mixed> $configs */
     public function load(array $configs, ContainerBuilder $container): void
     {
         $processor = new Processor();

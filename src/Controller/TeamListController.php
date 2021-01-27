@@ -19,11 +19,13 @@ use Twig\Environment;
 
 final class TeamListController
 {
+    /** @var array<string> */
     private $competitionNames;
     private $templating;
     private $competitionLoader;
     private $teamLoader;
 
+    /** @param array<string> $competitionNames */
     public function __construct(array $competitionNames, Environment $templating, CompetitionLoaderInterface $competitionLoader, TeamLoaderInterface $teamLoader)
     {
         $this->competitionNames = $competitionNames;
