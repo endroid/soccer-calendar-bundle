@@ -21,6 +21,6 @@ class TeamListControllerTest extends WebTestCase
         $client->request('GET', '/soccer-calendar/');
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertPageTitleSame('Soccer Calendar');
+        $this->assertStringContainsString('Soccer Calendars', $client->getResponse()->getContent());
     }
 }
