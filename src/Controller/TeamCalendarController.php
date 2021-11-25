@@ -53,6 +53,9 @@ final class TeamCalendarController
 
         $calendar = $this->calendarFactory->createTeamCalendar($team);
 
-        return new Response($this->calendarWriter->writeToString($calendar, new \DateTimeImmutable(), new \DateTimeImmutable('+1 year')));
+        return new Response($this->calendarWriter->writeToString($calendar, new \DateTimeImmutable(), new \DateTimeImmutable('+1 year')), Response::HTTP_OK, [
+            'Content-Type' => 'text/calendar; charset=utf-8',
+            'Content-Disposition' => 'attachment; filename="calendar-'.time().'.ics"'
+        ]);
     }
 }
