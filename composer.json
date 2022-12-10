@@ -12,12 +12,12 @@
         }
     ],
     "require": {
-        "php": "^7.4||^8.0",
+        "php": "^8.0",
         "endroid/installer": "^1.2.2",
-        "endroid/soccer-calendar": "^2.1.2",
-        "symfony/dependency-injection": "^4.4||^5.0||^6.0",
-        "symfony/http-foundation": "^4.4||^5.0||^6.0",
-        "symfony/twig-bundle": "^4.4||^5.0||^6.0"
+        "endroid/soccer-calendar": "^2.2",
+        "symfony/dependency-injection": "^5.4||^6.0",
+        "symfony/http-foundation": "^5.4||^6.0",
+        "symfony/twig-bundle": "^5.4||^6.0"
     },
     "require-dev": {
         "endroid/quality": "dev-master"
@@ -41,6 +41,9 @@
         }
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "endroid/installer": true
+        }
     }
 }

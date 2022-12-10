@@ -2,13 +2,6 @@
 
 declare(strict_types=1);
 
-/*
- * (c) Jeroen van den Enden <info@endroid.nl>
- *
- * This source file is subject to the MIT license that is bundled
- * with this source code in the file LICENSE.
- */
-
 namespace Endroid\SoccerCalendarBundle\Controller;
 
 use Endroid\SoccerData\Loader\CompetitionLoaderInterface;
@@ -19,19 +12,13 @@ use Twig\Environment;
 
 final class TeamListController
 {
-    /** @var array<string> */
-    private $competitionNames;
-    private $templating;
-    private $competitionLoader;
-    private $teamLoader;
-
-    /** @param array<string> $competitionNames */
-    public function __construct(array $competitionNames, Environment $templating, CompetitionLoaderInterface $competitionLoader, TeamLoaderInterface $teamLoader)
-    {
-        $this->competitionNames = $competitionNames;
-        $this->templating = $templating;
-        $this->competitionLoader = $competitionLoader;
-        $this->teamLoader = $teamLoader;
+    public function __construct(
+        /** @var array<string> */
+        private array $competitionNames,
+        private Environment $templating,
+        private CompetitionLoaderInterface $competitionLoader,
+        private TeamLoaderInterface $teamLoader
+    ) {
     }
 
     /**
