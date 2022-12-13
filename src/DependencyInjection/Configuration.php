@@ -10,10 +10,8 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 final class Configuration implements ConfigurationInterface
 {
-    /** @psalm-suppress PossiblyUndefinedMethod */
     public function getConfigTreeBuilder(): TreeBuilder
     {
-        /** @psalm-suppress TooManyArguments */
         $treeBuilder = new TreeBuilder('endroid_soccer_calendar');
 
         /** @var ArrayNodeDefinition $rootNode */
