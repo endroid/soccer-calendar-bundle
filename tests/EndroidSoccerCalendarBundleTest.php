@@ -6,9 +6,9 @@ namespace Endroid\SoccerCalendar\Tests;
 
 use PHPUnit\Framework\TestCase;
 
-class EndroidSoccerCalendarBundleTest extends TestCase
+final class EndroidSoccerCalendarBundleTest extends TestCase
 {
-    public function testNoTestsYet()
+    public function testNoTestsYet(): void
     {
         $this->assertTrue(true);
     }

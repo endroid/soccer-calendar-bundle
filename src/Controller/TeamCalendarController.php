@@ -15,11 +15,11 @@ use Symfony\Component\Routing\Annotation\Route;
 final class TeamCalendarController
 {
     public function __construct(
-        private CompetitionLoaderInterface $competitionLoader,
-        private TeamLoaderInterface $teamLoader,
-        private GameLoaderInterface $gameLoader,
-        private CalendarFactory $calendarFactory,
-        private IcalWriter $calendarWriter
+        private readonly CompetitionLoaderInterface $competitionLoader,
+        private readonly TeamLoaderInterface $teamLoader,
+        private readonly GameLoaderInterface $gameLoader,
+        private readonly CalendarFactory $calendarFactory,
+        private readonly IcalWriter $calendarWriter
     ) {
     }
 

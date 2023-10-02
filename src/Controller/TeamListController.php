@@ -14,10 +14,10 @@ final class TeamListController
 {
     public function __construct(
         /** @var array<string> */
-        private array $competitionNames,
-        private Environment $templating,
-        private CompetitionLoaderInterface $competitionLoader,
-        private TeamLoaderInterface $teamLoader
+        private readonly array $competitionNames,
+        private readonly Environment $templating,
+        private readonly CompetitionLoaderInterface $competitionLoader,
+        private readonly TeamLoaderInterface $teamLoader
     ) {
     }
 

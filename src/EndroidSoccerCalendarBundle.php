@@ -6,6 +6,6 @@ namespace Endroid\SoccerCalendarBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class EndroidSoccerCalendarBundle extends Bundle
+final class EndroidSoccerCalendarBundle extends Bundle
 {
 }
