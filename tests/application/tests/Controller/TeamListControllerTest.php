@@ -6,9 +6,9 @@ namespace Endroid\SoccerCalendarBundle\Tests;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class TeamListControllerTest extends WebTestCase
+final class TeamListControllerTest extends WebTestCase
 {
-    public function testGenerateController()
+    public function testGenerateController(): void
     {
         $client = static::createClient();
         $client->request('GET', '/soccer-calendar/');
