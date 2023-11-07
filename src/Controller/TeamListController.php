@@ -7,7 +7,6 @@ namespace Endroid\SoccerCalendarBundle\Controller;
 use Endroid\SoccerData\Loader\CompetitionLoaderInterface;
 use Endroid\SoccerData\Loader\TeamLoaderInterface;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
 use Twig\Environment;
 
 final class TeamListController
@@ -21,9 +20,6 @@ final class TeamListController
     ) {
     }
 
-    /**
-     * @Route("/", name="soccer_calendar_list")
-     */
     public function __invoke(): Response
     {
         $competitions = [];

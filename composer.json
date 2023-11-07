@@ -15,9 +15,9 @@
         "php": "^8.1",
         "endroid/installer": "^1.2.2",
         "endroid/soccer-calendar": "^2.2",
-        "symfony/dependency-injection": "^5.4||^6.0",
-        "symfony/http-foundation": "^5.4||^6.0",
-        "symfony/twig-bundle": "^5.4||^6.0"
+        "symfony/dependency-injection": "^5.4||^6.4||^7.0",
+        "symfony/http-foundation": "^5.4||^6.4||^7.0",
+        "symfony/twig-bundle": "^5.4||^6.4||^7.0"
     },
     "require-dev": {
         "endroid/quality": "dev-master"

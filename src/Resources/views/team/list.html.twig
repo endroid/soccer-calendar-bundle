@@ -16,8 +16,8 @@
                 {% for team in competition.teams %}
 
                     <tr>
-                        <td><a href="{{ path('soccer_calendar_team', { competitionName: competition.name, teamName: team.name }) }}">{{ team.name }}</a></td>
-                        <td width="20"><a href="{{ url('soccer_calendar_team', { competitionName: competition.name, teamName: team.name })|replace({'https://': 'webcal://'}) }}"><span class="glyphicon glyphicon-calendar"></span></a></td>
+                        <td><a href="{{ path('soccer_calendar_team_calendar', { competitionName: competition.name, teamName: team.name }) }}">{{ team.name }}</a></td>
+                        <td width="20"><a href="{{ url('soccer_calendar_team_calendar', { competitionName: competition.name, teamName: team.name })|replace({'https://': 'webcal://'}) }}"><span class="glyphicon glyphicon-calendar"></span></a></td>
                     </tr>
 
                 {% endfor %}
