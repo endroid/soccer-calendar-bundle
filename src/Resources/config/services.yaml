@@ -11,12 +11,7 @@ services:
     Endroid\SoccerCalendar\Factory\CalendarFactory:
         public: true
 
-    Endroid\SoccerData\Vi\Client: ~
-    Endroid\SoccerData\Vi\Loader\CompetitionLoader: ~
-    Endroid\SoccerData\Vi\Loader\TeamLoader: ~
-    Endroid\SoccerData\Vi\Loader\GameLoader: ~
-    Endroid\SoccerData\Loader\CompetitionLoaderInterface: '@Endroid\SoccerData\Vi\Loader\CompetitionLoader'
-    Endroid\SoccerData\Loader\TeamLoaderInterface: '@Endroid\SoccerData\Vi\Loader\TeamLoader'
-    Endroid\SoccerData\Loader\GameLoaderInterface: '@Endroid\SoccerData\Vi\Loader\GameLoader'
+    Endroid\SoccerData\Sofascore\Loader\TeamLoader: ~
+    Endroid\SoccerData\Loader\TeamLoaderInterface: '@Endroid\SoccerData\Sofascore\Loader\TeamLoader'
 
     Endroid\Calendar\Writer\IcalWriter: ~

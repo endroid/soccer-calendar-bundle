@@ -6,29 +6,21 @@ namespace Endroid\SoccerCalendarBundle\Controller;
 
 use Endroid\Calendar\Writer\IcalWriter;
 use Endroid\SoccerCalendar\Factory\CalendarFactory;
-use Endroid\SoccerData\Loader\CompetitionLoaderInterface;
-use Endroid\SoccerData\Loader\GameLoaderInterface;
 use Endroid\SoccerData\Loader\TeamLoaderInterface;
 use Symfony\Component\HttpFoundation\Response;
 
 final class TeamCalendarController
 {
     public function __construct(
-        private readonly CompetitionLoaderInterface $competitionLoader,
         private readonly TeamLoaderInterface $teamLoader,
-        private readonly GameLoaderInterface $gameLoader,
         private readonly CalendarFactory $calendarFactory,
         private readonly IcalWriter $calendarWriter
     ) {
     }
 
-    public function __invoke(string $competitionName, string $teamName): Response
+    public function __invoke(string $identifier): Response
     {
-        $competition = $this->competitionLoader->loadByName($competitionName);
-        $this->teamLoader->loadByCompetition($competition);
-        $team = $competition->getTeamByName($teamName);
-        $this->gameLoader->loadByTeam($team);
-
+        $team = $this->teamLoader->load($identifier);
         $calendar = $this->calendarFactory->createTeamCalendar($team);
 
         return new Response($this->calendarWriter->writeToString($calendar, new \DateTimeImmutable(), new \DateTimeImmutable('+1 year')), Response::HTTP_OK, [

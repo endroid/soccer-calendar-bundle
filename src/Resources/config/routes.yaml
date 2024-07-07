@@ -1,7 +1,3 @@
 soccer_calendar_team_calendar:
-    path: /{competitionName}/team/{teamName}.ics
+    path: /team/{identifier}.ics
     controller: Endroid\SoccerCalendarBundle\Controller\TeamCalendarController
-
-soccer_calendar_team_list:
-    path: /
-    controller: Endroid\SoccerCalendarBundle\Controller\TeamListController
